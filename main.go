@@ -22,6 +22,7 @@ func main() {
 		c.JSON(http.StatusOK, gin.H{
 			"message": "pong from service b",
 		})
+		return
 	})
 	r.POST("/send-telegram", func(c *gin.Context) {
 
@@ -45,6 +46,8 @@ func main() {
 		c.JSON(http.StatusOK, gin.H{
 			"message": "success",
 		})
+		return
+
 	})
 	r.Run(":5001")
 }
