@@ -24,7 +24,7 @@ func NewTicketUsecase(
 }
 
 func (uc *TicketUsecase) SendTelegram(req entity.SendTelegramRequest) (err error) {
-	msg := fmt.Sprintf("ada pembelian tiket film %s", req.Item)
+	msg := fmt.Sprintf("NOTIFICATION: Pembelian tiket film %s, oleh %s", req.Item, req.User)
 
 	err = uc.telegramDomain.SendMessage(msg)
 	if err != nil {
